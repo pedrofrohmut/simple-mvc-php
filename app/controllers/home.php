@@ -13,4 +13,13 @@ class Home extends Controller
     # Calls the view of the controller
     $this->view("home/index", ["name" => $user->name]);
   }
+
+  public function create($username = "", $email = "")
+  {
+    # Eloquent method of create() **User extends Eloquent
+    User::create([
+      "username" => $username,
+      "email" => $email
+    ]);
+  }
 }
